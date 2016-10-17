@@ -39,6 +39,10 @@ module Perican
         @event
       end
 
+      def to_hash
+        {:type => self.class,
+         :source => Marshal.dump(self.source).force_encoding("ISO-8859-1")}
+      end
     end # class Event
   end # module Resource
 end # module Perican
